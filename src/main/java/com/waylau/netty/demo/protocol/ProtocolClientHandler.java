@@ -15,11 +15,11 @@ public class ProtocolClientHandler extends SimpleChannelInboundHandler<Object> {
 	protected void channelRead0(ChannelHandlerContext ctx, Object obj)
 			throws Exception {
         Channel incoming = ctx.channel();
-		System.out.println("Server->Client:"+incoming.remoteAddress()+obj.toString());
+		System.out.println("ProtocolClientHandler Server->Client:"+incoming.remoteAddress()+obj.toString());
 		
 		if(obj instanceof ProtocolMsg) {
 			ProtocolMsg msg = (ProtocolMsg)obj;
-			System.out.println("Server->Client:"+incoming.remoteAddress()+msg.getBody());
+			System.out.println("ProtocolClientHandler Server->Client:"+incoming.remoteAddress()+msg.getBody());
 		}
 	}
 	@Override

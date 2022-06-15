@@ -63,7 +63,7 @@ public class ProtocolEncoder extends MessageToByteEncoder<ProtocolMsg> {
 		String body = msg.getBody();
 		byte[] bodyBytes = body.getBytes(Charset.forName("utf-8"));
 		int bodySize = bodyBytes.length;
-		
+		System.out.println("ProtocolEncoder bodySize:"+bodySize);
 		out.writeByte(header.getMagic());
 		out.writeByte(header.getMsgType());
 		out.writeShort(header.getReserve());

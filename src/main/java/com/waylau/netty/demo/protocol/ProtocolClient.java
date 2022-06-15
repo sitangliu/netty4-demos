@@ -72,7 +72,7 @@ public class ProtocolClient {
 				protocolHeader.setSn((short) 0);
 				String body = "床前明月光疑是地上霜";
 				StringBuffer sb = new StringBuffer();
-				for (int i = 0; i < 2700; i++) {
+				for (int i = 0; i < 3; i++) {
 					sb.append(body);
 				}
 
@@ -85,7 +85,7 @@ public class ProtocolClient {
 				msg.setBody(sb.toString());
 
 				f.channel().writeAndFlush(msg);
-				Thread.sleep(2000);
+				Thread.sleep(20000);
 			}
 			// 等待连接关闭
 			// f.channel().closeFuture().sync();

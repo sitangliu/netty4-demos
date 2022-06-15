@@ -76,6 +76,7 @@ public class ProtocolDecoder extends LengthFieldBasedFrameDecoder {
 		ProtocolMsg msg = new ProtocolMsg();
 		ProtocolHeader protocolHeader = new ProtocolHeader(magic, msgType,
 				reserve, sn, len);
+		System.out.println("ProtocolDecoder msg:"+msg.getBody());
 		msg.setBody(body);
 		msg.setProtocolHeader(protocolHeader);
 		return msg;
